@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>title</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var cookie=document.cookie;	
+			var name=cookie.split('=')[0];
+			var start_time=parseInt(cookie.split('=')[1]);
+				
+
+			var now=parseInt((new Date()).getTime()/1000);
+			var time=String(30-now+start_time)
+			var title="Welcome ";
+			title+=name;
+			document.title=title;
+			
+
+			var result='<br><br>'
+			result+="Hello ";
+			result+=name;
+			result+='<br><br>';
+			result+=time;
+			result+=" seconds left until your cookie expires."
+			
+			document.write(result);
+		</script>
+	</body>
+</html>
