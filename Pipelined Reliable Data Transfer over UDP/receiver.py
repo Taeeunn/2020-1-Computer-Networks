@@ -47,8 +47,6 @@ def fileReceiver():
 
         if seq==-100:
             if init==1: continue
-            #print(int(message[20:40].decode()))
-            #print(message[40:].decode())
             filename=message[40:].decode()
             pktNumint=int(message[20:40].decode())
 
