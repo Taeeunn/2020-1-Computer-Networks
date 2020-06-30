@@ -122,7 +122,6 @@ def recvAck(sendSocket):
         if ackSeq==-100:
             seq='%20d'%(-100)
             sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
-            sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
             continue
                   
         writeAck(log, ackTime-startTime, ackSeq, "received")
@@ -198,10 +197,6 @@ def fileSender():
 
     seq='%20d'%(-100)
     sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
-    sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
-    sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
-    sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort))
-    sendSocket.sendto(seq.encode()+pktNumstr.encode()+dstFilename.encode(), (recvAddr, recvPort)) 
 
     sendThread=Thread(target=sendPkt, args=(sendSocket,))
     recvThread=Thread(target=recvAck, args=(sendSocket,))
