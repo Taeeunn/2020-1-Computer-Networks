@@ -63,10 +63,6 @@ def fileReceiver():
         if init==0:
             seq='%20d'%(-100)
             recvSocket.sendto(seq.encode(), sendAddress)
-            recvSocket.sendto(seq.encode(), sendAddress)
-            recvSocket.sendto(seq.encode(), sendAddress)
-            recvSocket.sendto(seq.encode(), sendAddress)
-            recvSocket.sendto(seq.encode(), sendAddress)
 
             continue
 
@@ -104,11 +100,7 @@ def fileReceiver():
 
         if ackNum==pktNumint-1: 
             recvSocket.sendto(ackNumstr.encode(), sendAddress)
-            recvSocket.sendto(ackNumstr.encode(), sendAddress)
-            recvSocket.sendto(ackNumstr.encode(), sendAddress)
-            recvSocket.sendto(ackNumstr.encode(), sendAddress)
-            recvSocket.sendto(ackNumstr.encode(), sendAddress)
-
+      
             f=open(filename, "wb")
 
             for i in range(0, pktNumint):
